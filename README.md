@@ -4,3 +4,7 @@ Este libro fue escrito por el Dr. Olgierd Alf Biberstein en la década de los 70
 
 ## Notas 📖
 Es posible encontrar dichos apuntes de forma física en la biblioteca de la escuela. Sin embargo, me fue encomendada la tarea de transcribir parte de los apuntes a Látex.
+
+```
+ Algunos simbolos no fueron fielmente usados y en su lugar se usaron nuevos.
+```
