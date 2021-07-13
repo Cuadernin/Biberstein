@@ -1,0 +1,214 @@
+
+\documentclass[12pt, letterpaper, twoside]{book}
+\usepackage{amsfonts, amsmath, amssymb, color, fancyhdr, graphicx, latexsym, makeidx, mathrsfs, multicol, textcomp, theorem}
+
+\usepackage{XTOCInc}
+
+\usepackage[spanish]{babel}
+
+\usepackage{ulem}
+\usepackage[shortlabels]{enumitem}
+\usepackage{enumitem}
+\usepackage{stackrel}
+
+
+%%%%%%%%%%%%%% begin fonts %%%%%%%%%%%%%%
+
+\usepackage{ccfonts,eulervm}
+\usepackage[T1]{fontenc}
+
+%%%%%%%%%%%%%% end fonts %%%%%%%%%%%%%%
+
+\DeclareFontFamily{\encodingdefault}{default}{\hyphenchar\font=`\-}
+
+\DeclareMathOperator\sen{sen}
+\DeclareMathOperator\arctanh{\tt arc\,tanh}
+\DeclareMathOperator\Arctan{\tt Arc\,tan}
+\DeclareMathOperator\Arccos{\tt Arc\,cos}
+\DeclareMathOperator\expo{\tt exp}
+\DeclareMathOperator\Homo{\tt Hom}
+
+\DeclareMathOperator\Det{\mathop{\hbox{\tt det}}}
+\DeclareMathOperator\Vol{\mathop{\hbox{\tt vol}}}
+\DeclareMathOperator\Diam{\mathop{\hbox{\tt di\'{a}m}}}
+\DeclareMathOperator\Diag{\mathop{\hbox{\tt diag}}}
+\DeclareMathOperator\Sgn{\mathop{\hbox{\tt sgn}}}
+
+\DeclareMathOperator*{\miCup}{\cup}
+
+\def\milimSup{\mathop{\hbox{{\tt l\I m\,Sup}}}}
+\def\miliminf{\mathop{\hbox{{\tt l\I m\,\I nf}}}}
+
+\def\miMax{\mathop{\hbox{{\tt M\'ax}}}}
+\def\mimin{\mathop{\hbox{{\tt m\I n}}}}
+
+\def\miSup{\mathop{\hbox{{\tt Sup}}}}
+\def\miinf{\mathop{\hbox{{\tt \I nf}}}}
+
+\def\milim{\mathop{\hbox{{\tt l\I m}}}}
+
+\def\miSop{\mathop{\hbox{{\tt Spt}}}}
+
+%\font\seventeentt=cmr10 at 17pt
+
+%\theoremheaderfont{\scshape}
+
+\hyphenation{sobre}
+\hyphenation{normado}
+\hyphenation{Muestre}
+\hyphenation{tales}
+\hyphenation{bola}
+\hyphenation{conjunto}
+\hyphenation{Existe}
+
+%\def\bedis{$\begin{displaystyle}}
+
+%\def\endis{\end{displaystyle}$}
+
+\def\bedis{$\displaystyle }
+
+\def\endis{$ }
+
+
+
+\def\then{\ \Longrightarrow \ }
+
+\newcommand{\F}{\ensuremath{\mathbb{F}}}
+\newcommand{\G}{\ensuremath{\mathbb{G}}}
+\newcommand{\I}{\'\i}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\K}{\ensuremath{\mathbb{K}}}
+
+\newcommand{\Rn}{\ensuremath{\mathbb{R}^n}}
+\newcommand{\Rm}{\ensuremath{\mathbb{R}^m}}
+\newcommand{\flecha}{\ensuremath{\rightarrow}}
+\newcommand{\en}{\ensuremath{\in}}
+\newcommand{\todo}{\ensuremath{\forall}}
+\newcommand{\lam}{\ensuremath{\lambda}}
+\newcommand{\Lam}{\ensuremath{\Lambda}}
+\newcommand{\Rtres}{\ensuremath{\mathbb{R}^3}}
+\newcommand{\x}{\ensuremath{x}}
+\newcommand{\fxla}{\ensuremath{f(x,\lam)}}
+\newcommand{\cp}{\ensuremath{C^p}}
+\newcommand{\Ga}{\ensuremath{\Gamma}}
+\newcommand{\Li}{\ensuremath{L_\infty}}
+\newcommand{\xraya}{\ensuremath{\overrightarrow{x}}}
+\newcommand{\yraya}{\ensuremath{\overrightarrow{y}}}
+\newcommand{\zraya}{\ensuremath{\overrightarrow{z}}}
+\newcommand{\uraya}{\ensuremath{\overrightarrow{u}}}
+
+
+\newcommand{\alge}[1]{\ensuremath{\mathfrak{#1}}}
+\newcommand{\campo}{\ensuremath{\mathbb{K}}}
+\newcommand{\campon}{\ensuremath{\mathbb{K}^n}}
+\newcommand{\evec}[1]{\ensuremath{\boldsymbol{\mathcal{#1}}}}
+\newcommand{\field}[1]{\ensuremath{\mathbb{#1}}}
+\newcommand{\ie}{\mbox{\it i. e.}}
+\newcommand{\indice}[2]{\index{#1} \mbox{\sc{#2}}}
+\newcommand{\irra}{\ensuremath{\mathbb{I}}}
+\newcommand{\norma}[1]{\ensuremath{\left\| \vec{#1} \right\|}}
+\newcommand{\prodesc}[2]{\ensuremath{\left\langle \vec{#1} \, \left\lvert \, \vec{#2} \right. \right\rangle}}
+\newcommand{\set}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\st}{\ensuremath{\rotatebox[origin=c]{90}{$\ni$}}}
+\newcommand{\ud}{\mathtt{d}}
+\newcommand{\ve}[1]{\ensuremath{\boldsymbol{\vec{\mathtt{#1}}}}}
+
+%\newcommand{\suchthat}{\mathrel{\ooalign{$\ni$\cr\kern-1pt$-$\kern-6.5pt$-$}}}
+
+\def\demo{\noindent\mbox{\sc Demostraci\'on:}\\}
+\def\notac{\noindent\mbox{\sc NOTACI\' ON}\\}
+\def\fin{\hbox{\vrule height6pt width8pt depth0pt}}
+
+
+\def\titulo{
+    \begin{tabular}{ccc}
+      &{\Huge Integraci\'on}                                              & \\
+      &--------------------------- {\Large de} ---------------------------& \\
+      &{\Huge Lebesgue}                                                   & \\[.6in]
+      &{\Large -- Versi\'on 0 --}
+    \end{tabular}}
+
+\def\autor{\Large Dr. Olgierd Alf Biberstein             \\
+           \Large Herschd\"orfer                         \\[.6in]
+           INSTITUTO POLIT\'ECNICO NACIONAL              \\
+            Escuela Superior de F\I sica y Matem\'aticas \\
+            Departamento de Matem\'aticas                \\[.1in]
+           }
+
+\def\nonumchapter#1{%
+    \chapter*{#1}
+    \addcontentsline{toc}{chapter}{#1}}
+
+\def\prefacesection#1{%
+    \chapter*{#1}
+    \addcontentsline{toc}{chapter}{#1}}
+
+\makeindex
+\author{\autor}
+\date{\sc M\'exico\\ 2019-02-28}%{\bf Date:} { Unknown}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%1 one inch + \hoffset
+%2 one inch + \voffset
+%\paperwidth     = 597.00pt  %
+\paperheight    = 845.00pt  %
+%\hoffset        =  -0.45in  %
+%\voffset        =  -0.60in  %
+%\marginparwidth =   0.00pt  %
+%\marginparpush  =   5.00pt  %
+%\marginparsep   =   7.00pt  %
+%\textheight     =   8.90in  %
+%\textwidth      =   6.20in  %
+%\evensidemargin =  -0.10in  %pares
+%\oddsidemargin  =  -0.10in  %impares
+%\baselineskip   =  18.00pt  %
+%\headheight     =   1.25cm  %
+%\headsep1.12truecm          %
+%\topmargin-0.51truecm       %
+%\footskip       =  27.00pt  %
+\linespread{1.17}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{ Cap. \thechapter}{#1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[LE, RO]{\tt \thepage}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt}
+\fancypagestyle{plain}{\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}}
+
+\renewcommand{\footrulewidth}{0.3pt}
+\addtolength{\headheight}{0.5pt}
+\fancypagestyle{plain}{\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}}
+
+\fancyfoot[LE]{\small An\'alisis V. 3}
+\fancyfoot[RO]{\small Biberstein}
+
+\setlength{\parindent}{0pt}
+\newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
+
+\begin{document}
+
+%\pagenumbering{roman}
+
+%\title{\titulo}
+
+%\maketitle
+
+%\tableofcontents
+
+\include{Biber1}  %
+
+
+\end{document}
